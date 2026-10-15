@@ -8,7 +8,13 @@ The project is currently approaching one of its biggest milestones:
 SpringBoard.
 Once the userspace is sufficiently complete and SpringBoard is running, the project will be prepared for its first 
 
-public release.
+public release.. new update almost at public release injecting /sbin/launchd
+Kernel boots
+Ramdisk mounts
+Kernel tries to exec /sbin/launchd → it's compressed with LZFSE/decmpfs
+Kernel's decompression path fails (VNOP_GETXATTR errno 22)
+ exec returns errno 8 (EEXEC)
+No PID 1, no SpringBoard
 Until then, there’s not much to download here YET.
 The Goal
 The end goal is to make it possible to run an iOS userspace on an x86_64 Linux host, including the components required to reach a functional iOS environment.
